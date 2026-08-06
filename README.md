@@ -16,7 +16,7 @@
 - 侧边栏面板：看待发布 / 已发布状态
 - **一键发布 / 重新发布**（自动跑完 prepare → render → publish）
 - 发布记录记在插件本地（不往笔记 frontmatter 里塞一堆字段）
-- 多公众号：从本机 pipeline 配置读取，显示 `name`（如「早早集市」「古一科技」）
+- 多公众号：从本机 pipeline 配置读取，显示 `name`（如「我的主号」）
 - 设置页：环境检测、一键安装 CLI、复制 bun 安装命令
 
 ---
@@ -76,9 +76,8 @@ zzhub-pipeline --help
 # 查看配置（密钥会打码）
 zzp config --export
 
-# 设置账号显示名（可选）
-zzp config --key wx.accounts.default.name --value "早早集市"
-zzp config --key wx.accounts.ancientone.name --value "古一科技"
+# 设置账号显示名（可选，示例）
+zzp config --key wx.accounts.default.name --value "我的主号"
 ```
 
 配置文件一般在：
