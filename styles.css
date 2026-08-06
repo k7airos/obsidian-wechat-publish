@@ -1,0 +1,351 @@
+/* ── 面板整体 ── */
+.zzhub-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 14px 18px;
+  font-size: 13px;
+  line-height: 1.45;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.zzhub-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zzhub-panel-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+/* ── 环境提示 ── */
+.zzhub-env-banner {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  color: var(--text-error);
+  background: color-mix(in srgb, var(--text-error) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-error) 28%, transparent);
+}
+
+/* ── 主状态卡片 ── */
+.zzhub-hero {
+  flex: 0 0 auto;
+  padding: 14px 14px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.zzhub-hero-draft {
+  border-color: var(--background-modifier-border);
+  background: linear-gradient(
+    160deg,
+    var(--background-secondary) 0%,
+    color-mix(in srgb, var(--background-secondary) 92%, var(--text-muted)) 100%
+  );
+}
+
+.zzhub-hero-published {
+  border-color: color-mix(in srgb, var(--text-success, #10b981) 45%, transparent);
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--text-success, #10b981) 10%, var(--background-secondary)) 0%,
+    var(--background-secondary) 100%
+  );
+}
+
+.zzhub-hero-running {
+  border-color: color-mix(in srgb, var(--interactive-accent) 50%, transparent);
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--interactive-accent) 12%, var(--background-secondary)) 0%,
+    var(--background-secondary) 100%
+  );
+}
+
+.zzhub-hero-empty,
+.zzhub-hero-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  text-align: center;
+}
+
+.zzhub-hero-empty-msg {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.zzhub-hero-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* 状态徽章 */
+.zzhub-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.zzhub-badge-draft {
+  color: var(--text-muted);
+  background: var(--background-modifier-border);
+}
+
+.zzhub-badge-published {
+  color: var(--text-success, #059669);
+  background: color-mix(in srgb, var(--text-success, #10b981) 16%, transparent);
+}
+
+.zzhub-badge-running {
+  color: var(--text-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 16%, transparent);
+}
+
+/* 标题 */
+.zzhub-hero-title {
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  word-break: break-word;
+  color: var(--text-normal);
+}
+
+/* 元信息 chips */
+.zzhub-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+
+.zzhub-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.zzhub-chip-label {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.zzhub-chip-value {
+  color: var(--text-normal);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
+}
+
+/* 进度条 */
+.zzhub-progress {
+  margin-top: 12px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--background-modifier-border);
+  overflow: hidden;
+}
+
+.zzhub-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--interactive-accent);
+  transition: width 0.35s ease;
+}
+
+/* ── 操作区：主按钮在下、更醒目 ── */
+.zzhub-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.zzhub-btn-primary {
+  width: 100%;
+  padding: 11px 14px !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+}
+
+.zzhub-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* 重新发布：略弱一点，避免误触 */
+.zzhub-btn-republish.mod-cta {
+  /* 仍用 cta，靠文案区分 */
+}
+
+.zzhub-btn-secondary {
+  width: 100%;
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  color: var(--text-muted) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  cursor: pointer;
+}
+
+.zzhub-btn-secondary:hover:not(:disabled) {
+  color: var(--text-normal) !important;
+  background: var(--background-modifier-hover) !important;
+}
+
+.zzhub-btn-secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── 日志 ── */
+.zzhub-log {
+  margin-top: auto;
+  max-height: 120px;
+  overflow: auto;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+}
+
+.zzhub-log-info {
+  color: var(--text-muted);
+}
+
+.zzhub-log-ok {
+  color: var(--text-success);
+}
+
+.zzhub-log-error {
+  color: var(--text-error);
+}
+
+/* ── 设置页（保留） ── */
+.zzhub-settings-env {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.zzhub-settings-env p {
+  margin: 0 0 4px;
+  font-size: 13px;
+}
+
+.zzhub-install-log {
+  max-height: 180px;
+  overflow: auto;
+  margin: 0 0 16px;
+  padding: 10px;
+  font-size: 11px;
+  font-family: var(--font-monospace);
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-radius: 6px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.zzhub-accounts {
+  margin: 0 0 12px;
+}
+
+.zzhub-account-card {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+}
+
+.zzhub-account-card-default {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--interactive-accent) 35%, transparent);
+}
+
+.zzhub-account-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.zzhub-account-card-header strong {
+  font-size: 15px;
+}
+
+.zzhub-account-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent, #fff);
+}
+
+.zzhub-account-meta {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.zzhub-account-meta .zzhub-muted {
+  opacity: 0.85;
+}
+
+.zzhub-account-card .setting-item {
+  border-top: none;
+  padding-top: 6px;
+}
+
+.zzhub-muted {
+  color: var(--text-muted);
+}
+
+.zzhub-error {
+  color: var(--text-error);
+}
+
+.zzhub-ok {
+  color: var(--text-success);
+}

@@ -1,0 +1,16 @@
+{
+  "name": "obsidian-wechat-publish",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Obsidian plugin: one-click publish notes to WeChat Official Account drafts via zzhub-pipeline CLI",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.25.0",
+    "obsidian": "^1.8.7",
+    "typescript": "^5.7.2"
+  }
+}
