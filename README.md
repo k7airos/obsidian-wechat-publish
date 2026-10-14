@@ -1,11 +1,11 @@
 # 公众号一键发布（Obsidian）
 
-**仓库名：** [obsidian-wechat-publish](https://github.com/aatrooox/obsidian-wechat-publish)  
+**仓库名：** [obsidian-wechat-publish](https://github.com/k7airos/obsidian-wechat-publish)  
 **插件 ID：** `wechat-publish`  
 **平台：** 仅桌面端（Desktop）
 
 在 Obsidian 里打开一篇 Markdown，一键提交到 **微信公众号草稿箱**。  
-插件本身是薄壳 UI，真正的排版 / 素材 / 草稿接口由本机命令行工具 **[zzhub-pipeline](https://github.com/aatrooox)**（命令：`zzp` / `zzhub-pipeline`）完成。
+插件本身是薄壳 UI，真正的排版 / 素材 / 草稿接口由本机命令行工具 **[zzhub-pipeline](https://github.com/k7airos)**（命令：`zzp` / `zzhub-pipeline`）完成。
 
 > 未上架官方社区插件市场，请按下方说明 **自行下载安装**。
 
@@ -91,7 +91,7 @@ zzp config --key wx.accounts.default.name --value "我的主号"
 
 ### 方式 A：从 GitHub Release 下载（推荐）
 
-1. 打开仓库 [Releases](https://github.com/aatrooox/obsidian-wechat-publish/releases) 页面  
+1. 打开仓库 [Releases](https://github.com/k7airos/obsidian-wechat-publish/releases) 页面  
 2. 下载最新版本的 **`wechat-publish.zip`**（或分别下载下面三个文件）  
 3. 解压到你的库目录：
 
@@ -113,7 +113,7 @@ zzp config --key wx.accounts.default.name --value "我的主号"
 # 进入你的库的插件目录
 cd "/path/to/your-vault/.obsidian/plugins"
 
-git clone https://github.com/aatrooox/obsidian-wechat-publish.git wechat-publish
+git clone https://github.com/k7airos/obsidian-wechat-publish.git wechat-publish
 cd wechat-publish
 npm install
 npm run build
@@ -164,7 +164,7 @@ zzhub_intent: 发大号   # 可选，发布意图文案
 ## 从源码构建
 
 ```bash
-git clone https://github.com/aatrooox/obsidian-wechat-publish.git
+git clone https://github.com/k7airos/obsidian-wechat-publish.git
 cd obsidian-wechat-publish
 npm install
 npm run build   # 生成 main.js
@@ -207,4 +207,4 @@ npm run dev     # watch 构建
 
 ## 反馈
 
-Issue：<https://github.com/aatrooox/obsidian-wechat-publish/issues>
+Issue：<https://github.com/k7airos/obsidian-wechat-publish/issues>
